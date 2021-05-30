@@ -1,0 +1,213 @@
+\documentclass[float=true]{ctexart}
+
+\title{未名的北大游戏}
+\author{Lunatic Works}
+\date{\today}
+
+\usepackage{advdate}    % Advancing/saving dates
+\usepackage[calc,showdow,english]{datetime2}
+\DTMnewdatestyle{mydateformat}{%
+  \renewcommand{\DTMdisplaydate}[4]{%
+    % \DTMshortmonthname{##2}\nobreakspace%  (full) Month
+     ##1/##2/%  (full) Month
+    ##3,\space%                day,
+    \DTMshortweekdayname{##4}% short weekday,
+    % \number##1%                       year
+  }%
+  \renewcommand{\DTMDisplaydate}{\DTMdisplaydate}%
+}
+\DTMsetdatestyle{mydateformat}
+\usepackage{subfiles}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{multirow}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\newcommand{\mydate}{2019-2-18}
+\usepackage{xstring}
+
+\definecolor{DOrange}{RGB}{145,20,20}
+\definecolor{Red}{RGB}{255,0,0}
+\definecolor{DeepGreen}{RGB}{5,102,8}
+\newcommand\ZZ[1]{\textcolor{purple}{\texttt{ZZ: #1}}}
+\newcommand\akr[1]{\textcolor{DOrange}{\texttt{Akarin: #1}}}
+\newcommand\Ham[1]{\textcolor{DeepGreen}{\texttt{Hamster: #1}}}
+
+% timeline
+\newcommand{\timeline}[2]{\date{\DTMdate{2019-2-18 + #1 + #2}}}
+\newcommand{\ruxuedate}{0}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+% macro may help here
+\newcommand{\cangshua}{{事件开始：风纪委员在某次关门收拾的时候发现少了一把椅子。恰好男主在活动室整理资料出来晚了，于是被指为犯人。男主辩称自己是无辜的，被要求说如果你是无辜的就自己找出犯人，男主无奈开始查案。
+解决：男主一番查案无果，怀疑是灵异所为，但风纪委员不相信灵异。男主一天对风纪委员说你看锁门之后也是会丢的，不信我们来试一试，风纪委员应约，发现不仅东西丢了，还遇到许多其他吓人现象，被吓的不轻，也只好相信。（附加设定：之后会怕鬼）
+幕后：男主在查案无果后只好选择向主角团求助，众人合伙上演了一波灵异事件。风纪委员所见其实是其他人所为。（系统：可以增加一些躲避小游戏？）最后其他人被关在新太阳里面一晚上，在活动室彻夜聊天。
+结尾：众人问道椅子究竟去哪儿了。男主直言不知道。众人调侃着一定是你弄坏了，记得买把新的放回去一类，男主说真的不是我。事件结束，风机委员一边担心着闹鬼一边锁门。在门背后阴影中，似乎有什么东西拖着椅子消失在黑暗中……}}
+
+\include{素材/女主事件/nvzhu}
+\include{素材/男主事件/nanzhu}
+\include{素材/男主事件/ruxue}
+\include{素材/妹妹事件/妹妹}
+\include{素材/程序员事件/chengxu}
+\include{素材/小事件/深夜食堂苏德比}
+\include{素材/小事件/X教授}
+\include{素材/舍友事件/sheyou}
+
+\setlength\LTleft{-120pt}
+\setlength\LTright{0pt}
+\begin{longtable}[]{|p{12pt}|p{80pt}|p{68pt}|p{360pt}|}
+\hline
+周 & 日期            & 事件 & 描述 \\ \hline
+\multirow{2}{*}{1} & \date{\DTMdate{\mydate+ 0 }} &  入学（前？）   & \ruxue{0}  \ZZ{开头的时候需要有一个让人眼前一亮的引导性的剧情，比较紧凑的，驱动男主角在文化节之中探索。可以参考一些已有的游戏的开头。}  \\  \cline{3-4}
+& \date{\DTMdate{\mydate+ 1 }} &  入学  &  \ruxue{1} \ZZ{下午在做啥} \\  \cline{3-4}
+& \date{\DTMdate{\mydate+ 2 }} &  入学  & \ruxue{2}  \\  \cline{3-4}
+& \date{\DTMdate{\mydate+ 3 }} &  入学  & \ruxue{3} \akr{123haha}  \\  \cline{3-4}
+& \date{\DTMdate{\mydate+ 4 }} &  入学  & \ruxue{4} \\  \hline
+\multirow{2}{*}{1} 
+& \date{\DTMdate{\mydate+ 5 }} &  入学  & \ruxue{5}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 6 }} &  男主角1  &\Ham{序盘的故事，晚上很充实，白天有点空。这里建议加一个文化节事件，小型的校庆，可以引出校庆、引导男主体验校园生活、揭示室友真实身份、设计配角登场。} \nanzhu{1} \ZZ{等等，逛校园这个理由用太多次了。可以学校给男主角发了一个像是奶茶店集赞卡一样可以进行盖章的入学手册，需要男主以定向越野的方式前往学校的各个地方完成打卡。然后男主角的入学手册上出现了一个找不到的灵异地点之类的。}\akr{定向越野吧。因为仓鼠的事件这重复了}  \Ham{也不一定是定向越野，就是室友提供资料驱动男主逛校园，表面原因可以是课程作业}\\  \hline
+\multirow{2}{*}{2} & \date{\DTMdate{\mydate+ 7 }} &  男主角1  & \nanzhu{2} \ZZ{舍友出现的太鬼畜了，换个入场方式；灵异部的成立可以在解决第一个事件之后吗？在大家解决完事件心情畅快的时候，决定将主角团固化下来成为一个社团。} \akr{我觉得可以。前面有实无名即可}\Ham{那其实主角团集合就不急了，妹妹和程序员可以慢慢登场。}\\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 8 }} &  男主角1  & \nanzhu{3}\Ham{妹妹可以叙诡，前面有男主和一个人发消息的桥段，以及约某个人吃饭的桥段，但隐藏对方的身份。}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 9 }} &  男主角1  & \nanzhu{4} \ZZ{建议这里增加一些关于程序员的冲突} \Ham{比如重新沿用全息投影的设定，有一天男主突然能看到石舫上的影像，但舍友连摇头“是假货”，最后发现程序员拿着投影仪搞事情，顺势拉入伙。“我想在湖心岛拉他入伙，而不是教室。”}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 10 }} &  男主角1  & \nanzhu{5} \ZZ{爷爷对话有没有一个比较固定的触发机制，比如看到爷爷日记本之类的}\akr{我设计的是打电话来。}\Ham{我以为爷爷去世了。} \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 10 }} &  苏德比  & \debi{1} \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 11 }} &  男主角1  & \nanzhu{6} \\  \hline
+ & \date{\DTMdate{\mydate+ 11 }} &  苏德比  & \debi{2} \\  \hline
+\multirow{2}{*}{2} & \date{\DTMdate{\mydate+ 12 }} &  男主角1  & \nanzhu{7} \Ham{重要的转折点是：从看不见到看见，然后如何解决？在石舫上欢饮达旦，然后成立灵异部。（想个好听的名字）} \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 13 }} &  初遇燕元燕火 & 暂定，需要一个相遇事件\Ham{我设定一开始就遇到燕元燕火了，这里可以再次遇到}    \\  \hline
+ & \date{\DTMdate{\mydate+ 13 }} &  苏德比 & \debi{3}  \ZZ{这里是把小哥设定为一个掮客一样的角色吗？那可以描绘一个“里北大”加深一下气氛。}\Ham{原型是深夜食堂，里北大可以有，那德比性格就更神秘一点。} \\  \hline
+% dream start
+\multirow{2}{*}{\textcolor{red}{3}} & \date{\textcolor{red}{\DTMdate{\mydate+ 14 }}} &  女主  & \nvzhumeng{1}  \\  \cline{3-4}
+ & \textcolor{red}{\date{\DTMdate{\mydate+ 15 }}} &  女主  & \nvzhumeng{2}  \\  \cline{3-4}
+ & \textcolor{red}{\date{\DTMdate{\mydate+ 16 }}} &  女主  & \nvzhumeng{3} \Ham{考证一下，尽量中式恐怖一点} \\  \cline{3-4}
+ & \textcolor{red}{\date{\DTMdate{\mydate+ 17 }}} &  女主  & \nvzhumeng{4} \Ham{40年是不是有点夸张} \\  \cline{3-4}
+ & \textcolor{red}{\date{\DTMdate{\mydate+ 18 }}} &  女主  & \nvzhumeng{5}  \\  \hline
+\multirow{2}{*}{\textcolor{red}{3}} & \textcolor{red}{\date{\DTMdate{\mydate+ 19 }}} &  女主  & \nvzhumeng{6} \Ham{可以把山洞改成校园内某处吗？北大的地下在后续剧情中用得到，可以考虑一下。比如李兆基人文学院，一个始终不开门的院子，实际上镇压着咒物。} \ZZ{这个可以;或者换个校区} \\  \cline{3-4}
+ & \textcolor{red}{\date{\DTMdate{\mydate+ 20 }}} &  女主  & \nvzhumeng{7}  \\  \hline
+\multirow{4}{*}{\textcolor{red}{4}} & \textcolor{red}{\date{\DTMdate{\mydate+ 21 }}} &  女主  & \nvzhumeng{8}  \\  \cline{3-4}
+ & \textcolor{red}{\date{\DTMdate{\mydate+ 22 }}} &  女主  & \nvzhumeng{9}  \\  \cline{3-4}
+ & \textcolor{red}{\date{\DTMdate{\mydate+ 23 }}} &  女主  & \nvzhumeng{10}  \\  \cline{3-4}
+ & \textcolor{red}{\date{\DTMdate{\mydate+ 24 }}} &  女主  & \nvzhumeng{11}  \\  \cline{3-4}
+ \hline
+% dream end
+\multirow{2}{*}{3} & \date{\DTMdate{\mydate+ 14 }} &  女主  & \nvzhu{1}\Ham{另一种想法：男主被雕像封印，猫猫前来拯救。故事在高潮部分戛然而止，猫可能会死亡，男主灵魂可能会得救，留个悬念。恢复意识时，男主直接变猫了。
+时间并没有发生回溯。变猫的男主寻找自己的身体，最终发现自己在校医院昏迷不醒，妹妹、室友在旁照顾（凉宫春日的消失结尾）。猫听讨论得知女主不见了，突然意识到女主陷于危险之中，准备拯救女主。
+猫找到了女主，此时女主通过翻找男主的资料，发现男主昏迷和雕像有关，正在校园中寻找。猫纠结要不要告诉女主雕像所在地。（只有女主能救男主，但救男主导致女主置于危险。矛盾）最终决定独自返回地宫，迎战雕像。没想到女主察觉到猫的奇怪，追了过来。反复摆脱未果，两人来到地宫。
+战斗最后，猫决定自我牺牲，但被女主的智慧拯救了。智慧：雕像抓人设计一个规则，类似鬼捉人，比较有逻辑性，这样就可以最后找漏洞。比方说一次只能抓一个，女主主动出来当替死鬼，然后blablabla。自身产生自身的闭环递归，前目的地}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 15 }} &  女主  & \nvzhu{2}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 16 }} &  女主  & \nvzhu{3}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 17 }} &  女主  & \nvzhu{4}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 18 }} &  女主  & \nvzhu{5}  \\  \hline
+\multirow{2}{*}{3} & \date{\DTMdate{\mydate+ 19 }} &  女主  & \nvzhu{6}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 20 }} &  女主  & \nvzhu{7}  \\  \hline
+\multirow{2}{*}{4} & \date{\DTMdate{\mydate+ 21 }} &  女主  & \nvzhu{8} \Ham{我觉得这段剧情有点牵强。女主和男主刚认识不久，男主角仅仅是大作业受挫，女主就这么做有点倒贴的感觉，会失去后续攻略的成就感。要这么写的话，前面还是让男主角遇到一般意义上的危险，使男主的悲惨事件和女主的自我牺牲对等，否则很难让大学生之外的群体产生共情。} \ZZ{按照阿卡林的说法，这个女人就是这么傻，这么舔（x} \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 22 }} &  女主  & \nvzhu{9}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 23 }} &  女主  & \nvzhu{10}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 24 }} &  女主  & \nvzhu{11} \ZZ{稍微体现一下女主角的中央空调行为。} \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 25 }} & 程序员  & \chengxu{0}  \\  \hline
+\multirow{2}{*}{4} & \date{\DTMdate{\mydate+ 26 }} &  教授  & \jiaoshou{1} \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 27 }} &  教授  & \jiaoshou{2} \\  \hline
+\multirow{2}{*}{5} & \date{\DTMdate{\mydate+ 28 }} &  教授  & \jiaoshou{3}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 29 }} &  教授  & \jiaoshou{4}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 30 }} &  程序员  & \chengxu{1} \ZZ{这个故事我看了看，感觉不够曲折，这种幕后黑手是自己的第二重人格/人工智能的桥段任何读者都一眼能看穿。我建议加入如下叙述性诡计：首先程序员没有多重人格或者是多重人格已经相互和解，真正因为多重人格而导致有毛病的是人工智能Pygmalion； 所有程序员视角的部分转换为名字隐藏的第一人称视角，本质上是Pygmalion的感性视角（人格），Pygmalion的感性人格认为自己真的是一个人，不认同Pygmalion的理性人格所做的事情（这些事情保持不变），并且尝试和它进行斗争，在他斗到最后，看到了主角团闯入。这时候安排第三部分的解密环节，从匿名（Pygmalion的感性人格）视角切换为主角视角，真正的程序员出现，点出Pygmalion的感性视角也不是真人，真人会如何平衡自己的感性和理性，并且自己没有多重人格。就此Pygmalion的两个人格被程序员本人真正解决（如何解决，讨论的问题保持不变），主角团露出了开心的笑容，却没有发现程序员被屏幕照得半黑半白的脸一半面无表情一半在笑（暗示程序员本人可能依旧有其他人格只是并未显现）}\Ham{这个故事已经设计了一层反转，前面诱导玩家怀疑是程序员第二人格，后面揭示是人工智能，从解谜的角度来说是足够的；故事设计为程序员和人工智能的和解，实际上是和自我的和解，前面会讲述程序员的早期经历，人工智能即是他的“理想人格”（Pygmalion），然而这种理想亦是扭曲的。人工智能的自我扭曲也可以套用以上故事，不过无法体现程序员的成长，而且最后“半明半暗”暗示程序员后续还有故事，程序员自身的问题未解决。}\akr{我觉得这里的老套没问题。揭露犯人可在悬疑一点，现在的诡计持续时间有点短，导致故事显得单调} \ZZ{建议这个故事应该向着一种高级感走。} \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 31 }} &  教授  & \jiaoshou{5}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 32 }} &  妹妹  & \meimei{0} \\  \hline
+\multirow{2}{*}{5} & \date{\DTMdate{\mydate+ 33 }} &  妹妹  & \meimei{2}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 34 }} &  妹妹  & \meimei{3}  \\  \hline
+\multirow{2}{*}{6} & \date{\DTMdate{\mydate+ 35 }} &风纪委员日常  & \hyperlink{fengjirichang}{风纪委员日常} \ZZ{这个故事缺乏一定的推动力，妹妹跑来跑去是为什么？需要一个推动的理由，元小说对妹妹有什么帮助和好处？妹妹对于自己目前的生活有什么不满足。这个故事追求少女感，新房感。} \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 36 }} &  舍友  & \sheyou{0}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 37 }} &  舍友  & \sheyou{1}  \\  \cline{3-4}
+  & \date{\DTMdate{\mydate+ 37 }} &  舍友  & \sheyouz{0} \Ham{校内所有人的记忆都被改写了，那校外呢？互联网呢？这种记忆改写，希望他人相信的剧情，可以参考石头门。} \\  \cline{3-4}
+  & \textcolor{red}{\date{\DTMdate{\mydate+ 37 }}} &  舍友  & \sheyouz{1} \akr{这个红字日期表示在回忆部分才出现的倒叙，下同} \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 37 }} &  舍友  & \sheyou{2} \Ham{中间得有点别的剧情，燕元燕火支线。另外校庆快到了，会长不能全心全意的踢足球，这方面可以设置为阻力，“一天只能练2小时。”} \\  \cline{3-4}
+  & \date{\DTMdate{\mydate+ 38 }} &  舍友  & \sheyou{3} \akr{这里需要加入一个凑人环节，暂定想起了风纪委员和麻辣烫的苏德比。目前还没写}  \\  \cline{3-4}
+   & \textcolor{red}{\date{\DTMdate{\mydate+ 38 }}} &  舍友  & \sheyouz{2}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 39 }} &  舍友  & \sheyou{4}  \\  \hline
+ & \textcolor{red}{\date{\DTMdate{\mydate+ 39 }}} &  舍友  & \sheyouz{3}  \\  \cline{3-4}
+\multirow{2}{*}{6} & \date{\DTMdate{\mydate+ 40 }} &  舍友  & 舍友发现众人格外疲惫，但是没太在意，依旧训练。此段剧情我感觉可能需要数天，但是目前没想好具体时间线。  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 41 }} &  舍友  & \sheyou{5}  \\  \hline
+\multirow{2}{*}{7} & \date{\DTMdate{\mydate+ 42 }} &  舍友  & \sheyou{6} \ZZ{这里没看懂}  \\  \cline{3-4}
+& \date{\DTMdate{\mydate+ 42 }} &  舍友  & \sheyou{7} \\  \cline{3-4}
+& \date{\DTMdate{\mydate+ 43 }} &  舍友  & \sheyou{8}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 44 }} &  舍友  & 这里要多两天凑人  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 45 }} &  舍友  & 这里要多两天凑人  \\  \cline{3-4}
+& \date{\DTMdate{\mydate+ 46 }} &  舍友  & 这里要多一天热血体育，这样差不多也是两周  \\  \hline
+\multirow{2}{*}{7} & \date{\DTMdate{\mydate+ 47 }} &  小事件  &  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 48 }} &  小事件  &   \\  \hline
+\multirow{2}{*}{8} & \date{\DTMdate{\mydate+ 49 }} &  小事件  &   \\  \cline{3-4}
+& \date{\DTMdate{\mydate+ 50 }} &  女主2  & \nvzhuer{0}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 51 }} &  女主2  & \nvzhuer{1}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 52 }} &  女主2  & \nvzhuer{2}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 53 }} &  女主2  & \nvzhuer{3}  \\  \hline
+\multirow{2}{*}{8} & \date{\DTMdate{\mydate+ 54 }} &  女主2  & \nvzhuer{4}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 55 }} &  女主2  & \nvzhuer{5}  \\  \hline
+\multirow{2}{*}{9} & \date{\DTMdate{\mydate+ 56 }} &  女主2  & \nvzhuer{6}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 57 }} &  女主2  & \nvzhuer{7}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 58 }} &  女主2  & \nvzhuer{8}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 59 }} &  女主2  & \nvzhuer{9}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 60 }} &  女主2  & \nvzhuer{10}  \\  \hline
+\multirow{2}{*}{9} & \date{\DTMdate{\mydate+ 61 }} &  女主2  & \nvzhuer{11}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 62 }} &  女主2  & \nvzhuer{12}  \\  \hline
+\multirow{2}{*}{10} & \date{\DTMdate{\mydate+ 63 }} &  女主2  & \nvzhuer{13}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 64 }} &  女主2  & \nvzhuer{14}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 65 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 66 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 67 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \hline
+\multirow{2}{*}{10} & \date{\DTMdate{\mydate+ 68 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 69 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \hline
+\multirow{2}{*}{11} & \date{\DTMdate{\mydate+ 70 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 71 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 72 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 73 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 74 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \hline
+\multirow{2}{*}{11} & \date{\DTMdate{\mydate+ 75 }} &  男主角入学  & \include{素材/校庆事件/校庆事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 76 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \hline
+\multirow{2}{*}{12} & \date{\DTMdate{\mydate+ 77 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 78 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 79 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 80 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 81 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \hline
+\multirow{2}{*}{12} & \date{\DTMdate{\mydate+ 82 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 83 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \hline
+\multirow{2}{*}{13} & \date{\DTMdate{\mydate+ 84 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 85 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 86 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 87 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 88 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \hline
+\multirow{2}{*}{13} & \date{\DTMdate{\mydate+ 89 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 90 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \hline
+\multirow{2}{*}{14} & \date{\DTMdate{\mydate+ 91 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 92 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 93 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 94 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 95 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \hline
+\multirow{2}{*}{14} & \date{\DTMdate{\mydate+ 96 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 97 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \hline
+\multirow{2}{*}{15} & \date{\DTMdate{\mydate+ 98 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ & \date{\DTMdate{\mydate+ 99 }} &  男主角入学  & \hyperlink{event:nzj}{这是男主角入学的事件}  \\  \cline{3-4}
+ \hline
+\end{longtable}
+
+
+% \section{素材}
+
+% \include{素材/女主事件/QA}
+% % \include{素材/女主事件/恋爱大事件}
+% \include{素材/小事件/燕火日常}
+% \include{素材/小事件/风纪委员日常}
+% \include{素材/男主事件/男主事件大纲}
+% \include{素材/程序员事件/程序员事件大纲}
+% \include{素材/舍友事件/足球事件大纲}
+% \include{素材/设定/设定}
+% \include{素材/梗/俏皮话}
+
+\end{document}
